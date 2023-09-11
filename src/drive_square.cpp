@@ -9,6 +9,33 @@ int main(int argc, const char *argv[])
 {
     // Initialize the robot.
     mbot_bridge::MBot robot;
+    int flag;
+    flag=0;
+
+    //Driving in a square
+    robot.drive(0, 0.3, 0);
+    sleepFor(3);
+    robot.drive(0.3, 0, 0);
+    sleepFor(3);
+    robot.drive(0, -0.3, 0);
+    sleepFor(3);
+    robot.drive(-0.3, 0, 0);
+    sleepFor(3);
+
+
+    //Driving in a square 3 times
+
+    while (flag<3){
+        robot.drive(0, 0.3, 0);
+        sleepFor(3);
+        robot.drive(0.3, 0, 0);
+        sleepFor(3);
+        robot.drive(0, -0.3, 0);
+        sleepFor(3);
+        robot.drive(-0.3, 0, 0);
+        sleepFor(3);
+        flag++;
+    }
 
     /**
      * TODO: (P1.1) Write code to make the robot drive in a square. Then,
